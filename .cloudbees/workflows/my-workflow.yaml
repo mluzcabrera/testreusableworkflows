@@ -5,4 +5,4 @@ on:
   workflow_dispatch:
 jobs:
   call_rw_1:
-    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-1.yaml@v2
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-1.yaml@v3
