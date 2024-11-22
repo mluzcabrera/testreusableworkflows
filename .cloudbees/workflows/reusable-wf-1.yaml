@@ -7,25 +7,4 @@ on:
 jobs:
   call_rw_1:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-1.yaml@v3
-  JobName1:
-    steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world AHORA"
-  JobName2:
-    steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world"
-  JobName3:
-    needs: JobName2
-    steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world"
+
