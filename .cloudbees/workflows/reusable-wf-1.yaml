@@ -3,7 +3,7 @@ kind: workflow
 name: reusable wf 1
 
 on:
-  workflow_call: {}
+  workflow_call: 
 
 jobs:
   JobName1:
