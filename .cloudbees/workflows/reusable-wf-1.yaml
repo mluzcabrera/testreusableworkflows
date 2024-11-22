@@ -6,6 +6,8 @@ on:
   workflow_call: 
 
 jobs:
+  call_rw_1:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-1.yaml@v3
   JobName1:
     steps:
       - name: Say hello
