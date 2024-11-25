@@ -1,0 +1,9 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: reusable wf 4
+on:
+  workflow_call:
+  workflow_dispatch:
+jobs:
+  call_rw:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-5.yaml
