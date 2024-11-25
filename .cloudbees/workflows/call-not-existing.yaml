@@ -5,7 +5,5 @@ on:
   workflow_call:
   workflow_dispatch:
 jobs:
-  call_myself:
-    uses: asdfadddd
   call_myself2:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/doesnt-exist.yaml
