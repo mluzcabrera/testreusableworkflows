@@ -6,4 +6,4 @@ on:
   workflow_dispatch:
 jobs:
   call_myself:
-    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/loop-call-myself.yaml@v1097
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/loop-call-myself.yaml
