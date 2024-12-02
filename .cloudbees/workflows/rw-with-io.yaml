@@ -3,9 +3,28 @@ kind: workflow
 name: rw with io
 
 on:
-  push:
-    branches:
-      - '**'
+  workflow_call:
+   inputs:
+      mystring:
+        type: string
+        default: lalala
+        required: true
+      mynumber:
+        type: number
+        default: 123456
+        required: true
+      mybool:
+        type: boolean
+        default: true
+        required: true
+      mychoice:
+        type: choice
+        options:
+          - opt1
+          - opt2
+          - opt3
+        default: opt2
+        required: true
 
 jobs:
   build:
