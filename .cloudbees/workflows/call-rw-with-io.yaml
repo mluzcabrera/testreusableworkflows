@@ -31,8 +31,8 @@ jobs:
   use_outputs:
     needs: call_with_io
     steps:
-      - name: Print the output of the previous job
+      - name: Print
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "Outpus received: ${{ needs.call_with_io.out1 }} ${{ needs.call_with_io.out2 }} "
+          echo "Outpus received: ${{ needs.call_with_io.outputs.out1 }} ${{ needs.call_with_io.outputs.out2 }} "
