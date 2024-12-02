@@ -4,16 +4,16 @@ name: call RW with inputs and outputs
 on:
   workflow_dispatch:
     inputs:
-      mystring:
+      p1:
         type: string
         required: false
-      mynumber:
+      p2:
         type: number
         required: false
-      mybool:
+      p3:
         type: boolean
         required: false
-      mychoice:
+      p4:
         type: choice
         options:
           - opt1
