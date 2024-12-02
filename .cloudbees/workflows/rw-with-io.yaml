@@ -25,9 +25,17 @@ on:
           - opt3
         # default: opt2
         required: true
+    outputs:
+      out1:
+        value: ${{ jobs.build.outputs.output1 }}
+      out2:
+        value: ${{ jobs.scan.outputs.output2 }}
 
 jobs:
   build:
+    outputs:
+      output1: 'this is output1'
+      output2: 'this is output2'
     steps:
       - name: Say hello
         uses: docker://golang:1.20.3-alpine3.17
