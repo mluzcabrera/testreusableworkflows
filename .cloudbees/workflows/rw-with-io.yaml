@@ -37,7 +37,7 @@ jobs:
       output1: 'this is output1'
       output2: 'this is output2'
     steps:
-      - name: Say hello
+      - name: Print param and return outputs
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
