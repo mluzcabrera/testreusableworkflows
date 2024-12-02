@@ -24,7 +24,7 @@ jobs:
   call_with_io:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
     with:
-      mystring: 'hola'
-      mynumber: 2
-      mybool: true
-      mychoice: opt33333
+      mystring: ${{ inputs.p1 }}
+      mynumber: ${{ inputs.p2 }}
+      mybool: ${{ inputs.p3 }}
+      mychoice: ${{ inputs.p4 }}
