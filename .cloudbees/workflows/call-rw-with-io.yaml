@@ -23,3 +23,8 @@ on:
 jobs:
   call_with_io:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
+    with:
+      a1:
+      a2:
+      a3:
+      a4: 
