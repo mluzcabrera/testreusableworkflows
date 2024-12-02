@@ -3,11 +3,27 @@ kind: workflow
 name: call RW with inputs and outputs
 on:
   workflow_dispatch:
+    inputs:
+      mystring:
+        type: string
+        default: lalala
+        required: true
+      mynumber:
+        type: number
+        default: 123456
+        required: true
+      mybool:
+        type: boolean
+        default: true
+        required: true
+      mychoice:
+        type: choice
+        options:
+          - opt1
+          - opt2
+          - opt3
+        default: opt2
+        required: true
 jobs:
-  build:
-    steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world"
+  call_with_io:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
