@@ -6,24 +6,20 @@ on:
     inputs:
       mystring:
         type: string
-        default: lalala
-        required: true
+        required: false
       mynumber:
         type: number
-        default: 123456
-        required: true
+        required: false
       mybool:
         type: boolean
-        default: true
-        required: true
+        required: false
       mychoice:
         type: choice
         options:
           - opt1
           - opt2
           - opt3
-        default: opt2
-        required: true
+        required: false
 jobs:
   call_with_io:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
