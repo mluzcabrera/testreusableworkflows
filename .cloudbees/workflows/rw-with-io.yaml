@@ -7,15 +7,15 @@ on:
    inputs:
       mystring:
         type: string
-        default: lalala
+        # default: lalala
         required: true
       mynumber:
         type: number
-        default: 123456
+        # default: 123456
         required: true
       mybool:
         type: boolean
-        default: true
+        # default: true
         required: true
       mychoice:
         type: choice
@@ -23,7 +23,7 @@ on:
           - opt1
           - opt2
           - opt3
-        default: opt2
+        # default: opt2
         required: true
 
 jobs:
