@@ -15,27 +15,6 @@ on:
       out2:
         value: ${{ jobs.build.outputs.output2 }}
         description: Output desc 2
-   inputs:
-      mystring:
-        type: string
-        # default: lalala
-        required: true
-      mynumber:
-        type: number
-        # default: 123456
-        required: true
-      mybool:
-        type: boolean
-        # default: true
-        required: true
-      mychoice:
-        type: choice
-        options:
-          - opt1
-          - opt2
-          - opt3
-        # default: opt2
-        required: true
 
 jobs:
   build:
@@ -47,5 +26,5 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "Params received: ${{ inputs.mystring }} ${{ inputs.mynumber }} ${{ inputs.mybool }} ${{ inputs.mychoice }} "
+          echo " this is a secret: ${{ secrets.asecret44 }}"
 
