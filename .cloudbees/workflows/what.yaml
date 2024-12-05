@@ -19,7 +19,7 @@ jobs:
   call_with_io2-3:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2-2.yaml
     secrets:
-      asecret44: ${{ secrets.goodsecret2 }}
+      asecret44: ${{ vars.mlcbProp }}
   use_outputs-3:
     needs: call_with_io2-3
     steps:
