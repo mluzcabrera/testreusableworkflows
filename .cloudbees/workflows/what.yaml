@@ -16,11 +16,11 @@ jobs:
         shell: sh
         run: |
           echo "Outpus received: ${{ needs.call_with_io2.outputs.out1 }} ${{ needs.call_with_io2.outputs.out2 }} "
-call_with_io2-2:
+  call_with_io2-2:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2-2.yaml
     secrets:
       asecret44: ${{ secrets.wrongsecret }}
-use_outputs-2:
+  use_outputs-2:
     needs: call_with_io2-2
     steps:
       - name: Print
