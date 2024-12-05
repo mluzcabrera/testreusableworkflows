@@ -6,7 +6,8 @@ on:
 jobs:
   call_with_io2:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2-2.yaml
-
+    secrets:
+      asecret44: "hola"
   use_outputs:
     needs: call_with_io2
     steps:
