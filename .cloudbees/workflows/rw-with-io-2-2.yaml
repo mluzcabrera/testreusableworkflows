@@ -5,7 +5,7 @@ name: rw with io 2
 on:
   workflow_call:
    secrets:
-      asecret:
+      asecret44:
         description: this is secret 1
         required: true
    outputs:
