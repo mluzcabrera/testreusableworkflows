@@ -3,6 +3,9 @@ kind: workflow
 name: reusable wf 5
 on:
   workflow_call:
+    inputs:
+      asecret:
+        type: string
   workflow_dispatch:
 jobs:
   Do_something:
