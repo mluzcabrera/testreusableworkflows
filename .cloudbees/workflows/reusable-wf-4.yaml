@@ -7,5 +7,3 @@ on:
 jobs:
   call_rw:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-5.yaml
-    secrets:
-      asecret: ${{ vars.mlcbProp }}
