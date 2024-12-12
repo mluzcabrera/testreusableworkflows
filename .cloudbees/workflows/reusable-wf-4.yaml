@@ -8,4 +8,4 @@ jobs:
   call_rw:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-5.yaml
     with:
-      asecret: ${{ secrets.mlcbSecret }}
+      asecret: ${{ vars.mlcbProp }}
