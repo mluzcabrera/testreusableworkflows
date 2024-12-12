@@ -3,9 +3,6 @@ kind: workflow
 name: reusable wf 5
 on:
   workflow_call:
-    inputs:
-      asecret:
-        type: string
   workflow_dispatch:
 jobs:
   Do_something:
@@ -14,4 +11,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello secret: ${{ inputs.asecret }}"
+          echo "hello world"
