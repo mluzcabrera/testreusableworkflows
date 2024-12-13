@@ -36,11 +36,11 @@ jobs:
   build:
     outputs:
       output1: "${{ inputs.i1 }}"
-      output2: 'this is output2'
-      output3: 'this is output3'
-      output4: 'this is output4'
-      output5: 'this is output5'
-      output6: 'this is output6'
+      output2: "${{ inputs.i2 }}"
+      output3: "${{ inputs.i3 }}"
+      output4: "${{ secrets.s1 }}"
+      output5: "${{ secrets.s2 }}"
+      output6: "${{ secrets.s3 }}"
     steps:
       - name: Print param and return outputs
         uses: docker://golang:1.20.3-alpine3.17
