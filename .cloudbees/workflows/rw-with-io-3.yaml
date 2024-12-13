@@ -13,13 +13,10 @@ on:
         type: string
    secrets:
       s1:
-        description: this is secret 1
         required: true
       s2:
-        description: this is secret 1
         required: true
       s3:
-        description: this is secret 1
         required: true
    outputs:
       out1:
