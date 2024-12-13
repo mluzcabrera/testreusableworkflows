@@ -5,26 +5,50 @@ name: rw with io 3
 on:
   workflow_call:
    inputs:
-      aninput:
+      i1:
+        type: string
+      i2:
+        type: string
+      i3:
         type: string
    secrets:
-      asecret44:
+      s1:
+        description: this is secret 1
+        required: true
+      s2:
+        description: this is secret 1
+        required: true
+      s3:
         description: this is secret 1
         required: true
    outputs:
       out1:
         value: ${{ jobs.build.outputs.output1 }}
-        description: Output desc 1
+      out2:
+        value: ${{ jobs.build.outputs.output2 }}
+      out3:
+        value: ${{ jobs.build.outputs.output3 }}
+      out4:
+        value: ${{ jobs.build.outputs.output4 }}
+      out5:
+        value: ${{ jobs.build.outputs.output5 }}
+      out6:
+        value: ${{ jobs.build.outputs.output6 }}
 
 jobs:
   build:
     outputs:
       output1: 'this is output1'
+      output2: 'this is output2'
+      output3: 'this is output3'
+      output4: 'this is output4'
+      output5: 'this is output5'
+      output6: 'this is output6'
     steps:
       - name: Print param and return outputs
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo " this is a secret: ${{ secrets.asecret44 }}"
+          echo " print all: ${{ inputs.i1 }} ${{ inputs.i2 }} ${{ inputs.i3 }} ${{ secrets.s1 }} ${{ inputs.s2 }} ${{ inputs.s3 }}"
 
 
