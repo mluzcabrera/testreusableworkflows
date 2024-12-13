@@ -46,6 +46,6 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo " print all: ${{ inputs.i1 }} ${{ inputs.i2 }} ${{ inputs.i3 }} ${{ secrets.s1 }} ${{ inputs.s2 }} ${{ inputs.s3 }}"
+          echo " print all: ${{ inputs.i1 }} ${{ inputs.i2 }} ${{ inputs.i3 }} ${{ secrets.s1 }} ${{ secrets.s2 }} ${{ secrets.s3 }}"
 
 
