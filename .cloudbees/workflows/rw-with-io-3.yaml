@@ -35,7 +35,7 @@ on:
 jobs:
   build:
     outputs:
-      output1: 'this is output1'
+      output1: "${{ inputs.i1 }}"
       output2: 'this is output2'
       output3: 'this is output3'
       output4: 'this is output4'
@@ -46,6 +46,11 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo " print all: ${{ inputs.i1 }} ${{ inputs.i2 }} ${{ inputs.i3 }} ${{ secrets.s1 }} ${{ secrets.s2 }} ${{ secrets.s3 }}"
+          echo " i1: ${{ inputs.i1 }}"
+          echo " i2: ${{ inputs.i2 }}"
+          echo " i3: ${{ inputs.i3 }}"
+          echo " s1: ${{ secrets.s1 }}"
+          echo " s2: ${{ secrets.s2 }}"
+          echo " s3: ${{ secrets.s3 }}"
 
 
