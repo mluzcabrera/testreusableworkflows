@@ -1,0 +1,31 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: rw with io 3
+
+on:
+  workflow_call:
+   inputs:
+      aninput:
+        type: string
+   secrets:
+      asecret44:
+        description: this is secret 1
+        required: true
+   outputs:
+      out1:
+        value: ${{ jobs.build.outputs.output1 }}
+        description: Output desc 1
+
+jobs:
+  build:
+    outputs:
+      output1: 'this is output1'
+      output2: 'this is output2'
+    steps:
+      - name: Print param and return outputs
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo " this is a secret: ${{ secrets.asecret44 }}"
+
+
