@@ -6,7 +6,7 @@ on:
   workflow_call:
    inputs:
       i1:
-        type: string
+        type: number
         required: false
       i2:
         type: string
