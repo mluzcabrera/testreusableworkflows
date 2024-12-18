@@ -8,12 +8,12 @@ jobs:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-3.yaml
     with:
        i1: "hardcoded input asdfasd"
-      #i2: "${{ vars.mlcbProp }}" #why is this encrypted?
-      # i3: "cant pass a secret so hardcoding" #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
+       i2: "${{ vars.mlcbProp }}" #why is this encrypted?
+       i3: "cant pass a secret so hardcoding" #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
     #secrets:
-      # s: "hardcoded secret"
-      # s2: ${{ vars.mlcbProp }}
-      # s3: ${{ secrets.mlcbSecret }}
+       s1: "hardcoded secret"
+       s2: ${{ vars.mlcbProp }}
+       s3: ${{ secrets.mlcbSecret }}
   use_outputs:
     needs: call_with_io
     steps:
