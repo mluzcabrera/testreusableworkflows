@@ -7,7 +7,7 @@ jobs:
   call_with_io:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-3.yaml
     with:
-       i1: 3
+       i1: "opt2"
        i2: "${{ vars.mlcbProp }}" #why is this encrypted?
        i3: false #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
     secrets:
