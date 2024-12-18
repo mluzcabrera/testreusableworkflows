@@ -10,7 +10,7 @@ jobs:
        i1: "hardcoded input asdfasd"
       #i2: "${{ vars.mlcbProp }}" #why is this encrypted?
       # i3: "cant pass a secret so hardcoding" #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
-    secrets:
+    #secrets:
       # s: "hardcoded secret"
       # s2: ${{ vars.mlcbProp }}
       # s3: ${{ secrets.mlcbSecret }}
