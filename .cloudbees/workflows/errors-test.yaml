@@ -1,0 +1,29 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: errors-test
+on:
+  workflow_dispatch:
+jobs:
+  call_with_io:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-3.yaml
+    with:
+      # i1: "hardcoded input asdfasd"
+      i2: "${{ vars.mlcbProp }}" #why is this encrypted?
+      i3: "cant pass a secret so hardcoding" #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
+    secrets:
+      # s1: "hardcoded secret"
+      s2: ${{ vars.mlcbProp }}
+      s3: ${{ secrets.mlcbSecret }}
+  use_outputs:
+    needs: call_with_io
+    steps:
+      - name: Print
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "out1: ${{ needs.call_with_io.outputs.out1 }}"
+          echo "out2: ${{ needs.call_with_io.outputs.out2 }}"
+          echo "out3: ${{ needs.call_with_io.outputs.out3 }}"
+          echo "out4: ${{ needs.call_with_io.outputs.out4 }}"
+          echo "out5: ${{ needs.call_with_io.outputs.out5 }}"
+          echo "out6: ${{ needs.call_with_io.outputs.out6 }}"
