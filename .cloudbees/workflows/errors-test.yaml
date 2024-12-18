@@ -13,7 +13,7 @@ jobs:
     secrets:
       # s1: "hardcoded secret"
       #s2: ${{ vars.mlcbProp }}
-      #s3: ${{ secrets.mlcbSecret }}
+      s3: ${{ secrets.mlcbSecret }}
   use_outputs:
     needs: call_with_io
     steps:
