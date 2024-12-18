@@ -9,7 +9,7 @@ jobs:
     with:
        i1: "opt2"
        i2: "${{ vars.mlcbProp }}" #why is this encrypted?
-       i3: false #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
+       i3: "caca" #"${{ secrets.mlcbSecret }}" secrets is not allowed in the inputs
     secrets:
        s1: "hardcoded secret"
        s2: ${{ vars.mlcbProp }}
