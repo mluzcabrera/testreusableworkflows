@@ -9,7 +9,7 @@ on:
         type: number
         required: false
       i2:
-        type: string
+        type: boolean
         required: false
       i3:
         type: string
