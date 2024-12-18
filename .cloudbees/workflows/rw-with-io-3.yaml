@@ -6,7 +6,9 @@ on:
   workflow_call:
    inputs:
       i1:
-        type: number
+        type: choice
+        options:
+          - opt1
         required: false
       i2:
         type: boolean
