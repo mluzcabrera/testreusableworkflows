@@ -7,19 +7,20 @@ on:
    inputs:
       i1:
         type: string
-        required: true
+        required: false
       i2:
         type: string
-        required: true
+        required: false
       i3:
         type: string
+        required: false
    secrets:
       s1:
-        required: true
+        required: false
       s2:
-        required: true
+        required: false
       s3:
-        required: true
+        required: false
    outputs:
       out1:
         value: ${{ jobs.build.outputs.output1 }}
