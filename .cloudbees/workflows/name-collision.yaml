@@ -20,7 +20,7 @@ jobs:
       number: 5
       boolean: true
       expression: ${{env.JOB_ENV_VAR}}
-    uses: ./workflows/inner-workflow.yaml
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-1.yaml@v3
   outer-2-init:
     steps:
       - name: outer-1
