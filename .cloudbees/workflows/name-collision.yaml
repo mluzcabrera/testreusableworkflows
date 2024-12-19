@@ -1,0 +1,30 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: name collision
+on:
+  workflow_dispatch:
+jobs:
+  outer-1:
+    steps:
+      - name: outer-1
+        uses: docker://alpine:3.20
+        run: |
+          sleep 3
+          echo "outer-1"
+  outer-2:
+    env:
+      JOB_ENV_VAR: test
+    needs: outer-1
+    with:
+      test: top level value
+      number: 5
+      boolean: true
+      expression: ${{env.JOB_ENV_VAR}}
+    uses: ./workflows/inner-workflow.yaml
+  outer-2-init:
+    steps:
+      - name: outer-1
+        uses: docker://alpine:3.20
+        run: |
+          sleep 3
+          echo "outer-1"
