@@ -9,7 +9,6 @@ jobs:
       - name: outer-1
         uses: docker://alpine:3.20
         run: |
-          sleep 3
           echo "outer-1"
   outer-2:
     needs: outer-1
@@ -19,5 +18,4 @@ jobs:
       - name: outer-1
         uses: docker://alpine:3.20
         run: |
-          sleep 3
           echo "outer-1"
