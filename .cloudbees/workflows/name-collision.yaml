@@ -13,9 +13,9 @@ jobs:
   outer-2:
     needs: outer-1
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/reusable-wf-5.yaml
-  outer-2init:
+  caca-init:
     steps:
       - name: init-step
         uses: docker://alpine:3.20
         run: |
-          echo "outer-2-init"
+          echo "caca-init"
