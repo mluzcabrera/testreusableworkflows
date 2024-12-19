@@ -6,7 +6,7 @@ on:
 jobs:
   outer-1:
     steps:
-      - name: outer-1-setp
+      - name: outer-1-step
         uses: docker://alpine:3.20
         run: |
           echo "outer-1"
