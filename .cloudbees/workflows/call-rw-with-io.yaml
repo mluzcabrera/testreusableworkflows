@@ -22,6 +22,7 @@ on:
         required: false
 jobs:
   call_with_io2:
+    timeout-minutes: 1
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2.yaml
     with:
       mystring: ${{ inputs.p1 }}
