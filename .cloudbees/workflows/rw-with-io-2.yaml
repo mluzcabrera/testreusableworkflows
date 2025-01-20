@@ -43,5 +43,5 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          sleep 10
+          sleep 1000
           echo "Params received: ${{ inputs.mystring }} ${{ inputs.mynumber }} ${{ inputs.mybool }} ${{ inputs.mychoice }} "
