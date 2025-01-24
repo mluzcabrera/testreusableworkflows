@@ -37,7 +37,7 @@ jobs:
       mybool: ${{ inputs.p3 }}
       mychoice: ${{ inputs.p4 }}
   use_outputs:
-    needs: call_with_io
+    needs: call_with_io_super_long_name
     steps:
       - name: Print
         uses: docker://golang:1.20.3-alpine3.17
