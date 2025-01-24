@@ -29,7 +29,7 @@ jobs:
       mynumber: ${{ inputs.p2 }}
       mybool: ${{ inputs.p3 }}
       mychoice: ${{ inputs.p4 }}
-  call_with_io:
+  call_with_io_super_long_name:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
     with:
       mystring: ${{ inputs.p1 }}
