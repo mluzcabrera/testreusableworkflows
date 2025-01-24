@@ -58,5 +58,4 @@ jobs:
       approvers: 4b7f53fc-d4fe-11ec-bb55-42010a83ae55
       disallowLaunchByUser: false
       instructions: ""
-      approvalInputs: |
-        {}
+
