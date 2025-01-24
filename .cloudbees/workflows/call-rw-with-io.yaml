@@ -21,7 +21,7 @@ on:
           - opt3
         required: false
 jobs:
-  call_with_io2:
+  call_with_io2_super_long_name:
     timeout-minutes: 1
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2.yaml
     with:
