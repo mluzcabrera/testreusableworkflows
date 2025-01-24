@@ -38,6 +38,8 @@ jobs:
         run: |
           redis-cli SET testkey "Hello Redis!"
           redis-cli GET testkey
+    needs:
+      - noapproval
   build:
     outputs:
       output1: this is output1
@@ -47,7 +49,6 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          sleep 1000
           echo "Params received: ${{ inputs.mystring }} ${{ inputs.mynumber }} ${{ inputs.mybool }} ${{ inputs.mychoice }} "
     needs:
       - approve
@@ -58,4 +59,11 @@ jobs:
       approvers: 4b7f53fc-d4fe-11ec-bb55-42010a83ae55
       disallowLaunchByUser: false
       instructions: ""
-
+  noapproval:
+    environment: ""
+    steps:
+      - name: sdafsdf
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "hello there"
