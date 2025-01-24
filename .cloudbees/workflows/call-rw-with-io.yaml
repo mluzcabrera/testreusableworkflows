@@ -43,4 +43,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "Outpus received: ${{ needs.call_with_io.outputs.out1 }} ${{ needs.call_with_io.outputs.out2 }} "
+          echo "Outpus received: ${{ needs.call_with_io_super_long_name.outputs.out1 }} ${{ needs.call_with_io_super_long_name.outputs.out2 }} "
