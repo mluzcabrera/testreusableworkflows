@@ -3,7 +3,8 @@ kind: workflow
 name: Very complex 2
 
 on:
-  workflow_dispatch:
+  workflow_call:
+  
 jobs:
   getready:
     steps:
