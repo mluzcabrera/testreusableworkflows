@@ -1,0 +1,38 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Very complex 2
+
+on:
+  workflow_dispatch:
+jobs:
+  getready:
+    steps:
+      - name: Print
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "getting ready"
+  call_with_io2_super_long_name:
+    needs: getready
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2.yaml
+    with:
+      mystring: ${{ inputs.p1 }}
+      mynumber: ${{ inputs.p2 }}
+      mybool: ${{ inputs.p3 }}
+      mychoice: ${{ inputs.p4 }}
+  call_with_io_super_long_name:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io.yaml
+    with:
+      mystring: ${{ inputs.p1 }}
+      mynumber: ${{ inputs.p2 }}
+      mybool: ${{ inputs.p3 }}
+      mychoice: ${{ inputs.p4 }}
+  use_outputs:
+    needs: call_with_io_super_long_name
+    steps:
+      - name: Print
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Outpus received: ${{ needs.call_with_io_super_long_name.outputs.out1 }} ${{ needs.call_with_io_super_long_name.outputs.out2 }} "
+
