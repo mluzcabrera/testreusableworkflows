@@ -12,4 +12,7 @@ jobs:
         shell: sh
         run: |
           echo "getting ready"
+  call_with_io2_super_long_name:
+    needs: getready
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/very-complex-2.yaml
   
