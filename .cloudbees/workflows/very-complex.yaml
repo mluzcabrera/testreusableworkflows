@@ -12,5 +12,8 @@ jobs:
         shell: sh
         run: |
           echo "getting ready"
+  doit:
+    needs: getready
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/very-complex-2.yaml
 
   
