@@ -1,0 +1,10 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: delete me call
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/deleteme.yaml
