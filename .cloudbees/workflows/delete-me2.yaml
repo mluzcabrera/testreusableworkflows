@@ -1,12 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
-
-on:
-  push:
-    branches:
-      - '**'
-
 jobs:
   build:
     steps:
@@ -15,3 +9,41 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
+on:
+  workflow_call:
+    inputs:
+      astring:
+        type: string
+        default: hello
+        required: true
+        description: adesc
+      anumber:
+        type: number
+        default: 4
+        required: true
+        description: adesc2
+      abool:
+        type: boolean
+        default: true
+        required: true
+        description: desc3
+      achoice:
+        type: choice
+        options:
+          - opt1
+          - opt2
+          - opt3
+        default: opt2
+        required: true
+        description: adesc4
+      another:
+        type: string
+        default: adf
+        description: adf
+    secrets:
+      asecret:
+        description: adescfor secret
+        required: true
+      another:
+        description: another
+        required: true
