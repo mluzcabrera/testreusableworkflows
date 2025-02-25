@@ -3,6 +3,12 @@ kind: workflow
 name: call not existing
 on:
   workflow_call:
+    outputs:
+      nico:
+        value: test
+      nico2:
+        value: test2
+        description: test description
   workflow_dispatch:
 jobs:
   call_myself2:
