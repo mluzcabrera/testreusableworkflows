@@ -11,6 +11,7 @@ on:
         value: ${{ jobs.build.outputs.output2 }}
         description: Output desc 2
     inputs:
+      #caca
       mystring:
         type: string
         required: true
