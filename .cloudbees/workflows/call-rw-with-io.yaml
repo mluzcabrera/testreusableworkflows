@@ -23,6 +23,7 @@ on:
 jobs:
   call_with_io2_super_long_name:
     timeout-minutes: 1
+    environment: environment_mlcb
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw-with-io-2.yaml
     with:
       mystring: ${{ inputs.p1 }}
