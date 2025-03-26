@@ -14,20 +14,20 @@ on:
       #caca
       mystring:
         type: string
-        required: true
+        required: false
       mynumber:
         type: number
-        required: true
+        required: false
       mybool:
         type: boolean
-        required: true
+        required: false
       mychoice:
         type: choice
         options:
           - opt1
           - opt2
           - opt3
-        required: true
+        required: false
 jobs:
   buildserv:
     services:
