@@ -3,6 +3,11 @@ kind: workflow
 name: My workflow
 on:
   workflow_call:
+metadata:
+  stages/v1alpha1:
+    - name: inner stage
+      jobs:
+        - call_rw2
 jobs:
   call_rw2:
     uses: mluzcabrera/testreusableworkflows/.cloudbees/workflows/rw2.yaml
